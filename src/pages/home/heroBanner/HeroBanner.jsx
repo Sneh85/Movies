@@ -1,3 +1,5 @@
+import React from "react";
+
 import "./style.scss";
 import useFetch from "../../../hooks/useFetch";
 import { useSelector } from "react-redux/es/hooks/useSelector";
