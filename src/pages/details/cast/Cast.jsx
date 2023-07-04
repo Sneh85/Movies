@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -6,7 +5,6 @@ import "./style.scss";
 
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import Img from "../../../components/lazyLoadImage/Img";
-
 import avatar from "../../../assets/avatar.png";
 
 const Cast = ({ data, loading }) => {
@@ -28,19 +26,19 @@ const Cast = ({ data, loading }) => {
                 {!loading ? (
                     <div className="listItems">
                         {data?.map((item) => {
-                            let imgUrl = item.profile_path ? url.profile +  item.profile_path : avatar;
-                            return(
-                                <div key={item.id} className="listItem" >
-                         <div className="profileImg">
-                          <Img src={imgUrl}/>
-                  </div>
-                               <div className="name">
-                                {item.name}
-                               </div>
-                               <div className="character">
-                                {item.character}
-                               </div>
-                             </div>
+                            let imgUrl = item.profile_path
+                                ? url.profile + item.profile_path
+                                : avatar;
+                            return (
+                                <div key={item.id} className="listItem">
+                                    <div className="profileImg">
+                                        <Img src={imgUrl} />
+                                    </div>
+                                    <div className="name">{item.name}</div>
+                                    <div className="character">
+                                        {item.character}
+                                    </div>
+                                </div>
                             );
                         })}
                     </div>
